@@ -67,6 +67,7 @@ List userMessages = [
   {
     "id": 1,
     "name": "Ayo",
+    "validated": "assets/svg/discount.svg",
     "img": "assets/images/girls/img_1.jpeg",
     "online": true,
     "story": true,
@@ -74,7 +75,9 @@ List userMessages = [
     "created_at": "1:00 pm"
   },
   {
+    "id": 2,
     "name": "Rondeau",
+    "validated": "",
     "img": "assets/images/girls/img_2.jpeg",
     "online": true,
     "story": false,
@@ -84,6 +87,7 @@ List userMessages = [
   {
     "id": 3,
     "name": "Valerie",
+    "validated": "assets/svg/discount.svg",
     "img": "assets/images/girls/img_3.jpeg",
     "online": true,
     "story": true,
@@ -93,6 +97,7 @@ List userMessages = [
   {
     "id": 4,
     "name": "Anne",
+    "validated": "",
     "img": "assets/images/girls/img_4.jpeg",
     "online": false,
     "story": false,
@@ -102,6 +107,7 @@ List userMessages = [
   {
     "id": 5,
     "name": "Fineas",
+    "validated": "",
     "img": "assets/images/girls/img_5.jpeg",
     "online": true,
     "story": false,
@@ -111,6 +117,7 @@ List userMessages = [
   {
     "id": 6,
     "name": "Maya",
+    "validated": "assets/svg/discount.svg",
     "img": "assets/images/girls/img_6.jpeg",
     "online": false,
     "story": true,

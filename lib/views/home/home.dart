@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:heyto/views/home/chat_page.dart';
 import 'package:heyto/widget/component.dart';
 import 'package:heyto/views/home/none_around.dart';
 //import 'package:heyto/views/home/pause_account.dart';
@@ -20,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> _widgetOptions = <Widget>[
     const NoneAround(),
     const FavoritesPage(),
-    const Text("This is Chat Page"),
+    const ChatPage(),
     const Text("This is your friend list"),
   ];
   void _onItemTap(int index) {

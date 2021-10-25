@@ -51,6 +51,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
             likesJson.length,
             (index) {
               return Container(
+                padding: const EdgeInsets.all(0.8),
                 width: (size.width - 15) / 2,
                 height: 250,
                 child: Stack(
