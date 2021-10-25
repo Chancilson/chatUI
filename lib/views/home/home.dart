@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:heyto/widget/component.dart';
+import 'package:heyto/views/home/none_around.dart';
+//import 'package:heyto/views/home/pause_account.dart';
+//import 'package:heyto/views/home/heyto_finder.dart';
+import 'package:heyto/views/home/favarites_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -14,8 +18,8 @@ class _HomePageState extends State<HomePage> {
 
   int _selectedIndex = 0;
   final List<Widget> _widgetOptions = <Widget>[
-    const Text("This is home page"),
-    const Text("This is Favorite Page"),
+    const NoneAround(),
+    const FavoritesPage(),
     const Text("This is Chat Page"),
     const Text("This is your friend list"),
   ];
@@ -32,6 +36,7 @@ class _HomePageState extends State<HomePage> {
     String _chat = _selectedIndex == 2 ? "assets/svg/chat_active.svg" : "assets/svg/chat.svg";
     String _profil = _selectedIndex == 3 ? "assets/svg/profil_active.svg" : "assets/svg/profil.svg";
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Container(
           width: 100,
@@ -51,7 +56,9 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+        child: Container(
+          child: _widgetOptions.elementAt(_selectedIndex),
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,

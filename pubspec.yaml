@@ -38,6 +38,7 @@ dependencies:
   intl_phone_number_input: ^0.7.0+2
   pin_code_fields: ^7.3.0
   flutter_svg: ^0.23.0+1
+  rive: ^0.7.32
 
 dev_dependencies:
   flutter_test:
@@ -67,7 +68,9 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - assets/images/
+    - assets/images/girls/
     - assets/svg/
+    - assets/animated/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

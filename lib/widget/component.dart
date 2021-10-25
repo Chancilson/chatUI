@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Component {
-  static Widget buildNavIcon(SvgPicture icon, int index, bool withBage,BuildContext context,
+  static Widget buildNavIcon(
+      SvgPicture icon, int index, bool withBage, BuildContext context,
       {int badge = 0, int color = 0xFFFA3967}) {
     if (withBage) {
       return Container(
@@ -76,4 +77,7 @@ class Component {
     }
   }
 
+  Widget button() {
+    return ElevatedButton(onPressed: () {}, child: const Text(""));
+  }
 }
