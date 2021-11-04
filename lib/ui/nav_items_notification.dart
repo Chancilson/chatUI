@@ -2,14 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Component {
-  static Widget buildNavIcon(
-
-      SvgPicture icon, int index, bool withBage, BuildContext context,
+  static Widget buildNavIcon(SvgPicture icon, int index, bool withBage,BuildContext context,
       {int badge = 0, int color = 0xFFFA3967}) {
-
     if (withBage) {
       return Container(
-
         width: MediaQuery.of(context).size.width,
         height: kBottomNavigationBarHeight,
         padding: const EdgeInsets.all(0.0),
@@ -70,7 +66,6 @@ class Component {
             ),
           ),
         ),
-        
       );
     } else {
       return SvgPicture(
@@ -81,7 +76,4 @@ class Component {
     }
   }
 
-  Widget button() {
-    return ElevatedButton(onPressed: () {}, child: const Text(""));
-  }
 }

@@ -1,28 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:heyto/models/chat_message.dart';
+import 'package:heyto/ui/message.dart';
 
 class MessageBody extends StatefulWidget {
-  const MessageBody({ Key? key }) : super(key: key);
+  const MessageBody({Key? key}) : super(key: key);
 
   @override
-  _MessageBodyState createState() => _MessageBodyState();
+  State<MessageBody> createState() => _MessageBodyState();
 }
 
 class _MessageBodyState extends State<MessageBody> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const Spacer(),
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-          decoration: const BoxDecoration(
-            color: Colors.blue,
-          ),
-          child:const SafeArea(
-            child: Text("data"),
-          ),
-        ),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        verticalDirection: VerticalDirection.down,
+        children: List.generate(demeChatMessages.length, (index) {
+          return Message(
+            message: demeChatMessages[index],
+          );
+        }),
+      ),
     );
   }
 }

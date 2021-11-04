@@ -16,7 +16,8 @@ class _MessageScreenState extends State<MessageScreen> {
       backgroundColor: Colors.white,
       appBar: buildAppbar(),
       body: const MessageBody(),
-    );
+      //bottomSheet: const ChatInputField(),
+      );
   }
 
 

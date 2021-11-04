@@ -4,7 +4,10 @@ class ButtonWithGradient extends StatelessWidget {
   final Function? onTap;
   final String text;
   final double? fontSize;
-  final double? width;
+  final double? marginLeft;
+  final double? marginRight;
+  final double? marginTop;
+  final double? marginBottom;
   final double? height;
   final double? borderRadius;
   final double? borderWidth;
@@ -19,23 +22,31 @@ class ButtonWithGradient extends StatelessWidget {
     required this.text,
     this.fontWeight,
     this.fontSize,
-    this.width,
     this.height,
     this.borderRadius,
-    this.textColor,
+    this.textColor = Colors.white,
     this.borderColor = Colors.transparent,
     this.borderWidth = 0,
     this.beginColor = 0xFF000000,
     this.endColor = 0xFF202020,
-    this.onTap,
+    this.onTap, this.marginLeft = 0,
+    this.marginRight = 0, 
+    this.marginTop = 0,
+    this.marginBottom = 0,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     List<Color> colors = [Color(beginColor), Color(endColor)];
     return Container(
-      width: width,
+      margin: EdgeInsets.only(
+        top: marginTop!,
+        left: marginLeft!,
+        right: marginRight!,
+        bottom: marginBottom!,
+      ),
       height: height,
+      width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: colors,
@@ -49,9 +60,7 @@ class ButtonWithGradient extends StatelessWidget {
       ),
       child: ElevatedButton(
         child: Text(text, style: TextStyle(color: textColor, fontSize: 15.0)),
-        onPressed: () {
-          onTap;
-        },
+        onPressed: onTap as void Function()?,
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(Colors.transparent),
           shape: MaterialStateProperty.all(
