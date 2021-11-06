@@ -9,6 +9,7 @@ class ButtonWithGradient extends StatelessWidget {
   final double? marginTop;
   final double? marginBottom;
   final double? height;
+  final double? width;
   final double? borderRadius;
   final double? borderWidth;
   final Color? textColor;
@@ -23,6 +24,7 @@ class ButtonWithGradient extends StatelessWidget {
     this.fontWeight,
     this.fontSize,
     this.height,
+    this.width = 0,
     this.borderRadius,
     this.textColor = Colors.white,
     this.borderColor = Colors.transparent,
@@ -46,7 +48,7 @@ class ButtonWithGradient extends StatelessWidget {
         bottom: marginBottom!,
       ),
       height: height,
-      width: MediaQuery.of(context).size.width,
+      width: width != 0 ? width : MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: colors,

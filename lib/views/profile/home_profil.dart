@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:heyto/ui/button_with_gradient.dart';
 import 'package:heyto/ui/container_with_corner.dart';
 import 'package:heyto/views/profile/profile_details.dart';
 import 'package:heyto/views/profile/settings/settings.dart';
@@ -188,6 +189,34 @@ class ProfileHome extends StatelessWidget {
                           ],
                         ),
                       ),
+
+                      ContainerCorner(
+                        borderRadius: 10,
+                        height: 35,
+                        marginLeft: 30,
+                        marginRight: 30,
+                        color: const Color(0xFFF3F5F9),
+                        child: Row(
+                          children: const [
+                            ButtonWithGradient(
+                              text: "Copy",
+                              width: 100,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 12,
+                              beginColor: 0xFF27E150,
+                              endColor: 0xFF00E0AA,
+                            ),
+                            Text(
+                              "heyto.app/invitetoheyto1234",
+                            style: TextStyle(
+                              color: Color(0xFF879099),
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600,
+                            ),
+                            ),
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 ),

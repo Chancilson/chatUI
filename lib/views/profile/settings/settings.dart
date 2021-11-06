@@ -14,6 +14,8 @@ class SettingsPage extends StatefulWidget {
 
 class _SettingsPageState extends State<SettingsPage> {
   bool active = true;
+  List<bool> isSelected = [false, true];
+  int distance = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -213,22 +215,75 @@ class _SettingsPageState extends State<SettingsPage> {
             ),
             title("Show Distances in"),
             ContainerCorner(
+              color: Colors.white,
+              height: 70,
               borderColor: const Color(0xFFB5B9C5),
-              height: 50,
               borderRadius: 10,
               marginTop: 15,
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 10, right: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Text(
-                      "Recently Active Status",
-                      style: TextStyle(
-                        color: Color(0xFF47525C),
-                        fontSize: 13,
-                        fontWeight: FontWeight.w500,
+              child: Center(
+                child: ToggleButtons(
+                  borderRadius: BorderRadius.circular(10),
+                  borderColor: Colors.transparent,
+                  renderBorder: false,
+                  selectedBorderColor: Colors.transparent,
+                  splashColor: Colors.transparent,
+                  selectedColor: Colors.transparent,
+                  fillColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  onPressed: (int index) {
+                    setState(() {
+                      for (int i = 0; i < isSelected.length; i++) {
+                        isSelected[i] = i == index;
+                      }
+                    });
+                  },
+                  isSelected: isSelected,
+                  children: [
+                    Container(
+                      width: (MediaQuery.of(context).size.width / 2) - 25,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        borderRadius: const BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10), bottomLeft: Radius.circular(10), bottomRight: Radius.circular(10),),
+                        color: isSelected[0] ? null : Colors.white,
+                        gradient: isSelected[0]
+                            ? const LinearGradient(
+                                colors: [Color(0xFF27E150), Color(0xFF00E0AA)])
+                            : null,
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Km.",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
+                            color:
+                                isSelected[0] ? Colors.white : const Color(0xFF47525C),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      width: (MediaQuery.of(context).size.width / 2) - 25,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        borderRadius: const BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10), bottomLeft: Radius.circular(10), bottomRight: Radius.circular(10),),
+                        color: isSelected[1] ? null : Colors.white,
+                        gradient: isSelected[1]
+                            ? const LinearGradient(
+                                colors: [Color(0xFF27E150), Color(0xFF00E0AA)])
+                            : null,
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Mi.",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
+                            color:
+                                isSelected[1] ? Colors.white : const Color(0xFF47525C),
+                          ),
+                        ),
                       ),
                     ),
                   ],
@@ -277,38 +332,37 @@ class _SettingsPageState extends State<SettingsPage> {
               height: 50,
             ),
             GestureDetector(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const DeleteAccountPage()));
-              },
-              child: ContainerCorner(
-              borderColor: const Color(0xFFB5B9C5),
-              height: 50,
-              borderRadius: 10,
-              marginTop: 15,
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 10, right: 10),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Text(
-                    "Delete Account",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.red,
-                      fontSize: 13,
-                      fontWeight: FontWeight.w500,
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const DeleteAccountPage()));
+                },
+                child: ContainerCorner(
+                  borderColor: const Color(0xFFB5B9C5),
+                  height: 50,
+                  borderRadius: 10,
+                  marginTop: 15,
+                  color: Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10, right: 10),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Text(
+                          "Delete Account",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.red,
+                            fontSize: 13,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        )
+                      ],
                     ),
-                  )
-                  ] ,
-                ),
-              ),)
-            ),
-
-           const SizedBox(height: 20),
+                  ),
+                )),
+            const SizedBox(height: 20),
           ],
         ),
       ),
@@ -329,7 +383,7 @@ class _SettingsPageState extends State<SettingsPage> {
           children: [
             Text(
               option,
-              style:const TextStyle(
+              style: const TextStyle(
                 color: Color(0xFF47525C),
                 fontSize: 13,
                 fontWeight: FontWeight.w500,
