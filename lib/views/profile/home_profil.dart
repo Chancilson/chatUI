@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:heyto/ui/button_with_gradient.dart';
 import 'package:heyto/ui/container_with_corner.dart';
+import 'package:heyto/views/profile/edit/edit_home.dart';
 import 'package:heyto/views/profile/profile_details.dart';
 import 'package:heyto/views/profile/settings/settings.dart';
 
@@ -23,8 +24,10 @@ class ProfileHome extends StatelessWidget {
           automaticallyImplyLeading: false,
           leading: IconButton(
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const SettingsPage()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SettingsPage()));
               },
               icon: SvgPicture.asset("assets/svg/setting.svg")),
           title: Container(
@@ -37,13 +40,15 @@ class ProfileHome extends StatelessWidget {
           elevation: 0,
           actions: [
             IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const EditPage()) );
+                },
                 icon: SvgPicture.asset("assets/svg/edit.svg")),
           ],
         ),
         body: Padding(
           padding: const EdgeInsets.only(
-            top: 12.0,
+            top: 27.0,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -82,8 +87,8 @@ class ProfileHome extends StatelessWidget {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(
-                          top: 15,
-                          bottom: 15,
+                          top: 10,
+                          bottom: 25,
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -154,7 +159,7 @@ class ProfileHome extends StatelessWidget {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(
-                          top: 50.0,
+                          top: 80.0,
                         ),
                         child: Column(
                           children: [
@@ -189,35 +194,40 @@ class ProfileHome extends StatelessWidget {
                           ],
                         ),
                       ),
-
                       ContainerCorner(
                         borderRadius: 10,
                         height: 35,
+                        marginTop: 20,
                         marginLeft: 30,
                         marginRight: 30,
                         color: const Color(0xFFF3F5F9),
                         child: Row(
-                          children: const [
+                          children: [
                             ButtonWithGradient(
+                              marginRight: 3,
+                              onTap: () {},
+                              height: 35,
+                              activeBoxShadow: false,
                               text: "Copy",
-                              width: 100,
+                              topLeftBorder: 10.0,
+                              bottomLeftBorder: 10.0,
+                              width: 70,
                               fontWeight: FontWeight.w700,
                               fontSize: 12,
                               beginColor: 0xFF27E150,
                               endColor: 0xFF00E0AA,
                             ),
-                            Text(
+                            const Text(
                               "heyto.app/invitetoheyto1234",
-                            style: TextStyle(
-                              color: Color(0xFF879099),
-                              fontSize: 12,
-                              fontWeight: FontWeight.w600,
-                            ),
+                              style: TextStyle(
+                                color: Color(0xFF879099),
+                                fontSize: 12,
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
                           ],
                         ),
                       ),
-                      
                     ],
                   ),
                 ),

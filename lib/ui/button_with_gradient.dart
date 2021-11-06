@@ -10,7 +10,12 @@ class ButtonWithGradient extends StatelessWidget {
   final double? marginBottom;
   final double? height;
   final double? width;
+  final bool activeBoxShadow;
   final double? borderRadius;
+  final double? topLeftBorder;
+  final double? topRightBorder;
+  final double? bottomLeftBorder;
+  final double? bottomRightBorder;
   final double? borderWidth;
   final Color? textColor;
   final Color? borderColor;
@@ -25,16 +30,22 @@ class ButtonWithGradient extends StatelessWidget {
     this.fontSize,
     this.height,
     this.width = 0,
-    this.borderRadius,
+    this.borderRadius = 0.0,
     this.textColor = Colors.white,
     this.borderColor = Colors.transparent,
     this.borderWidth = 0,
+    this.activeBoxShadow = true,
     this.beginColor = 0xFF000000,
     this.endColor = 0xFF202020,
-    this.onTap, this.marginLeft = 0,
-    this.marginRight = 0, 
+    this.onTap,
+    this.marginLeft = 0,
+    this.marginRight = 0,
     this.marginTop = 0,
     this.marginBottom = 0,
+    this.topLeftBorder = 0,
+    this.topRightBorder = 0,
+    this.bottomLeftBorder = 0,
+    this.bottomRightBorder = 0,
   }) : super(key: key);
 
   @override
@@ -55,10 +66,21 @@ class ButtonWithGradient extends StatelessWidget {
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
         ),
-        borderRadius: const BorderRadius.all(Radius.circular(100)),
-        boxShadow: const [
-          BoxShadow(color: Colors.grey, offset: Offset(0, 4), blurRadius: 5.0)
-        ],
+        borderRadius: borderRadius != 0
+            ? BorderRadius.all(Radius.circular(borderRadius!))
+            : BorderRadius.only(
+                topLeft:
+                    Radius.circular(topLeftBorder! != 0 ? topLeftBorder! : 0),
+                topRight:
+                    Radius.circular(topRightBorder! != 0 ? topRightBorder! : 0),
+                bottomLeft: Radius.circular(
+                    bottomLeftBorder! != 0 ? bottomLeftBorder! : 0),
+                bottomRight: Radius.circular(
+                    bottomRightBorder! != 0 ? bottomRightBorder! : 0),
+              ),
+        boxShadow: activeBoxShadow ? const [
+          BoxShadow(color: Color(0xFF27E150), offset: Offset(0, 4), blurRadius: 12.0)
+        ] : null,
       ),
       child: ElevatedButton(
         child: Text(text, style: TextStyle(color: textColor, fontSize: 15.0)),

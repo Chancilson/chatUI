@@ -82,6 +82,7 @@ class DeleteAccountPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 180),
                   ButtonWithGradient(
+                    borderRadius: 100.0,
                     text: "PAUSE MY ACCOUNT",
                     beginColor: 0xFF27E150,
                     endColor: 0xFF00E0AA,
@@ -122,6 +123,7 @@ class DeleteAccountPage extends StatelessWidget {
                                     height: 35,
                                   ),
                                   ButtonWithGradient(
+                                    borderRadius: 100,
                                     text: "Delete My Account",
                                     marginLeft: 15,
                                     marginRight: 15,

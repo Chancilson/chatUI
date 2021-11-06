@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:heyto/ui/container_with_corner.dart';
 import 'package:heyto/ui/text_with_tap.dart';
+import 'package:heyto/views/profile/edit/edit_home.dart';
 
 class ProfileDetails extends StatefulWidget {
   const ProfileDetails({Key? key}) : super(key: key);
@@ -42,7 +43,10 @@ class _ProfileDetailsState extends State<ProfileDetails> {
         centerTitle: true,
         actions: [
           IconButton(
-              onPressed: () {}, icon: SvgPicture.asset("assets/svg/edit.svg")),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const EditPage()) );
+              }, 
+              icon: SvgPicture.asset("assets/svg/edit.svg")),
         ],
       ),
       body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
