@@ -198,7 +198,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 textAlign: TextAlign.start,
                 style: TextStyle(
                   color: Color(0xFFB5B9C5),
-                  fontSize: 12,
+                  fontSize: 14,
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -385,7 +385,7 @@ class _SettingsPageState extends State<SettingsPage> {
               option,
               style: const TextStyle(
                 color: Color(0xFF47525C),
-                fontSize: 13,
+                fontSize: 16,
                 fontWeight: FontWeight.w500,
               ),
             ),

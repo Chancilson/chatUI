@@ -34,7 +34,7 @@ class ButtonWithGradient extends StatelessWidget {
     this.textColor = Colors.white,
     this.borderColor = Colors.transparent,
     this.borderWidth = 0,
-    this.activeBoxShadow = true,
+    this.activeBoxShadow = false,
     this.beginColor = 0xFF000000,
     this.endColor = 0xFF202020,
     this.onTap,
