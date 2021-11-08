@@ -36,7 +36,24 @@ class _AddSchoolPageState extends State<AddSchoolPage> {
           top: 15,
         ),
         child: ListView(
-          children: [
+          children: const [
+
+            TextField(
+              textAlign: TextAlign.start,
+              style: TextStyle(
+                fontSize: 19,
+                fontWeight: FontWeight.w500,
+              ),
+              decoration: InputDecoration(
+                focusColor: Color(0xFFC7C7C7),
+                hintStyle: TextStyle(
+                  color: Color(0xFF47525C),
+                  fontSize: 19,
+                  fontWeight: FontWeight.w500,
+                ),
+                hintText: "Search for school",
+              ),
+            ),
             
           ]
         ),
