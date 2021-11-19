@@ -19,7 +19,7 @@ class _NoneAroundState extends State<NoneAround> {
             height: 100.0,
             decoration: const BoxDecoration(
               shape: BoxShape.circle,
-              image: DecorationImage(image: AssetImage("images/nonearound.png")),
+              image: DecorationImage(image: AssetImage("assets/images/nonearound.png")),
             ),
           ),
           const Padding(

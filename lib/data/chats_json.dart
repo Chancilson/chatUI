@@ -71,8 +71,13 @@ List userMessages = [
     "img": "assets/images/girls/img_1.jpeg",
     "online": true,
     "story": true,
+    "read": false,
+    "typing": true,
+    "sent": true,
+    "favorite": true,
+    "messages": "2",
     "message": "How are you doing?",
-    "created_at": "1:00 pm"
+    "created_at": "1 days ago"
   },
   {
     "id": 2,
@@ -81,8 +86,13 @@ List userMessages = [
     "img": "assets/images/girls/img_2.jpeg",
     "online": true,
     "story": false,
+    "read": true,
+    "typing": false,
+    "sent": false,
+    "favorite": false,
+    "messages": "1",
     "message": "Long time no see!!",
-    "created_at": "12:00 am"
+    "created_at": "2 days ago"
   },
   {
     "id": 3,
@@ -91,8 +101,13 @@ List userMessages = [
     "img": "assets/images/girls/img_3.jpeg",
     "online": true,
     "story": true,
+    "read": false,
+    "typing": false,
+    "sent": true,
+    "favorite": false,
+    "messages": "0",
     "message": "Glad to know you in person!",
-    "created_at": "3:30 pm"
+    "created_at": "last week ago"
   },
   {
     "id": 4,
@@ -101,6 +116,11 @@ List userMessages = [
     "img": "assets/images/girls/img_4.jpeg",
     "online": false,
     "story": false,
+    "read": true,
+    "typing": false,
+    "sent": false,
+    "favorite": false,
+    "messages": "1",
     "message": "I'm doing fine and how about you?",
     "created_at": "9:00 am"
   },
@@ -111,8 +131,13 @@ List userMessages = [
     "img": "assets/images/girls/img_5.jpeg",
     "online": true,
     "story": false,
+    "read": true,
+    "typing": false,
+    "sent": false,
+    "favorite": true,
+    "messages": "3",
     "message": "What is your real name?",
-    "created_at": "11:25 am"
+    "created_at": "Apr 22"
   },
   {
     "id": 6,
@@ -121,6 +146,11 @@ List userMessages = [
     "img": "assets/images/girls/img_6.jpeg",
     "online": false,
     "story": true,
+    "read": true,
+    "typing": true,
+    "sent": false,
+    "favorite": true,
+    "messages": "2",
     "message": "I'm happy to be your friend",
     "created_at": "10:00 am"
   },

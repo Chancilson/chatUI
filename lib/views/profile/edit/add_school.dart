@@ -46,6 +46,8 @@ class _AddSchoolPageState extends State<AddSchoolPage> {
               ),
               decoration: InputDecoration(
                 focusColor: Color(0xFFC7C7C7),
+                fillColor: Color(0xFFC7C7C7),
+                hoverColor: Color(0xFFC7C7C7),
                 hintStyle: TextStyle(
                   color: Color(0xFF47525C),
                   fontSize: 19,

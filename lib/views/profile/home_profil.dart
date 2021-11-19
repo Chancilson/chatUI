@@ -80,7 +80,7 @@ class ProfileHome extends StatelessWidget {
                               ),
                               shape: BoxShape.circle,
                               image: const DecorationImage(
-                                  image: AssetImage("images/nonearound.png")),
+                                  image: AssetImage("assets/images/nonearound.png")),
                             ),
                           ),
                         ),

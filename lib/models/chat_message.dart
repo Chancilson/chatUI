@@ -23,17 +23,33 @@ List demeChatMessages = [
     isSender: false,
   ),
   ChatMessage(
+    text: "Oko yinda masta",
+    messageType: ChatMessageType.text,
+    messageStatus: MessageStatus.viewed,
+    isSender: false,
+  ),
+
+  ChatMessage(
     text: "",
     messageType: ChatMessageType.audio,
     messageStatus: MessageStatus.viewed,
     isSender: true,
   ),
+
   ChatMessage(
     text: "Hello, How are you?",
     messageType: ChatMessageType.text,
     messageStatus: MessageStatus.viewed,
     isSender: true,
   ),
+
+  ChatMessage(
+    text: "zala calme yaya",
+    messageType: ChatMessageType.text,
+    messageStatus: MessageStatus.viewed,
+    isSender: true,
+  ),
+
   ChatMessage(
     text: "",
     messageType: ChatMessageType.audio,

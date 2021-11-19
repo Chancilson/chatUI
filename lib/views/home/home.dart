@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:heyto/views/home/chat_page.dart';
+import 'package:heyto/views/chats/chats_screen.dart';
 import 'package:heyto/views/profile/home_profil.dart';
+import 'package:heyto/views/tiket/tiket_home.dart';
 import 'package:heyto/widget/component.dart';
-import 'package:heyto/views/home/none_around.dart';
+//import 'package:heyto/views/home/none_around.dart';
 //import 'package:heyto/views/home/heyto_finder.dart';
 import 'package:heyto/views/home/favarites_page.dart';
 
@@ -19,9 +20,9 @@ class _HomePageState extends State<HomePage> {
 
   int _selectedIndex = 0;
   final List<Widget> _widgetOptions = <Widget>[
-    const NoneAround(),
+    const TikeHome(),
     const FavoritesPage(),
-    const ChatPage(),
+    const ChatsScreen(),
     const ProfileHome(),
   ];
   void _onItemTap(int index) {
@@ -38,24 +39,7 @@ class _HomePageState extends State<HomePage> {
     String _profil = _selectedIndex == 3 ? "assets/svg/profil_active.svg" : "assets/svg/profil.svg";
     return Scaffold(
       backgroundColor: Colors.white,
-      // appBar: AppBar(
-      //   title: Container(
-      //     width: 100,
-      //     height: 30,
-      //     margin: const EdgeInsets.only(top: 12),
-      //     alignment: Alignment.topCenter,
-      //     child: Image.asset("assets/images/logo.png"),
-      //   ),
-      //   leading: IconButton(onPressed: () {}, icon: SvgPicture.asset("assets/svg/left.svg")),
-      //   centerTitle: true,
-      //   elevation: 0.0,
-      //   backgroundColor: Colors.white70,
-      //   actions: [
-      //     IconButton(
-      //         onPressed: () {},
-      //         icon: SvgPicture.asset("assets/svg/config.svg")),
-      //   ],
-      // ),
+      //appBar: BuildAppBar(),
       body: Center(
         child: Container(
           child: _widgetOptions.elementAt(_selectedIndex),
@@ -104,6 +88,34 @@ class _HomePageState extends State<HomePage> {
         showUnselectedLabels: false,
         iconSize: 40.0,
       ),
+    );
+  }
+}
+
+class BuildAppBar extends StatelessWidget {
+  const BuildAppBar({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      title: Container(
+        width: 100,
+        height: 30,
+        margin: const EdgeInsets.only(top: 12),
+        alignment: Alignment.topCenter,
+        child: Image.asset("assets/images/logo.png"),
+      ),
+      leading: IconButton(onPressed: () {}, icon: SvgPicture.asset("assets/svg/left.svg")),
+      centerTitle: true,
+      elevation: 0.0,
+      backgroundColor: Colors.white70,
+      actions: [
+        IconButton(
+            onPressed: () {},
+            icon: SvgPicture.asset("assets/svg/config.svg")),
+      ],
     );
   }
 }
