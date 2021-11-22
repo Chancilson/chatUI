@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:heyto/ui/button_with_gradient.dart';
 import 'package:heyto/ui/container_with_corner.dart';
 import 'package:heyto/views/tiket/ads.dart';
+import 'package:heyto/views/tiket/components.dart';
 
 class TikeHome extends StatefulWidget {
   const TikeHome({Key? key}) : super(key: key);
@@ -66,38 +67,8 @@ class _TikeHomeState extends State<TikeHome> {
                         ),
                       ),
                     ),
-                    Container(
-                      decoration: const BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(30),
-                        bottomRight: Radius.circular(30),
-                        topLeft: Radius.circular(30),
-                        bottomLeft: Radius.circular(30)
-                        ),
-                      ),
-                      height: 49,
-                      width: 125,
-                      margin: const EdgeInsets.only(
-                        left: 50,
-                        right: 50,
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SvgPicture.asset("assets/svg/ticket_icon.svg"),
-                          const SizedBox( width: 10),
-                          const Text(
-                          "200",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 23,
-                              fontWeight: FontWeight.bold),
-                              textAlign: TextAlign.center,
-                        ),
-                        ],
-                      ),
-                    ),
+                    
+                    ticketFree(),
                     
                     Padding(
                       padding: const EdgeInsets.all(15.0),
@@ -195,3 +166,4 @@ class _TikeHomeState extends State<TikeHome> {
     );
   }
 }
+  
